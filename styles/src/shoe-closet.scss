@@ -1,0 +1,36 @@
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+
+@mixin shelf() {
+  width: 100%;
+
+  &:after {
+    content: "";
+    clear: both;
+    float: none;
+  }
+}
+
+@mixin custom-pair(
+  $xs-proportion: 1, 
+  $sm-proportion: $xs-proportion,
+  $md-proportion: $sm-proportion,
+  $lg-proportion: $md-proportion) {
+
+  float: left;
+
+  width: $xs-proportion * 100%;
+
+  @media(min-width: $sm-breakpoint) {
+    width: $sm-proportion * 100%;
+  }
+
+  @media(min-width: $md-breakpoint) {
+    width: $md-proportion * 100%;
+  }
+
+  @media(min-width: $lg-breakpoint) {
+    width: $lg-proportion * 100%;
+  }
+}
