@@ -2,13 +2,22 @@ $sm-breakpoint: 576px;
 $md-breakpoint: 768px;
 $lg-breakpoint: 992px;
 
-@mixin row() {
+@mixin row($children-count: 0) {
   width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
 
   &:after {
     content: "";
     clear: both;
     float: none;
+  }
+
+  @for $index from 1 through $children-count {
+    > *:nth-child(#{ $index }) {
+      order: $index - 1;
+    }
   }
 }
 
@@ -20,9 +29,8 @@ $lg-breakpoint: 992px;
   $md-proportion: $sm-proportion,
   $md-offset: $sm-offset,
   $lg-proportion: $md-proportion,
-  $lg-offset: $md-offset) {
-
-  float: left;
+  $lg-offset: $md-offset,
+  $order: -1) {
 
   width: $xs-proportion * 100%;
 
@@ -39,5 +47,9 @@ $lg-breakpoint: 992px;
   @media(min-width: $lg-breakpoint) {
     margin-left: $lg-offset * 100%;
     width: $lg-proportion * 100%;
+  }
+
+  @if($order != -1) {
+    order: $order;
   }
 }

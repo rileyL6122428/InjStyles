@@ -1,0 +1,32 @@
+@import "../src/wardrobe.scss";
+
+section#sample-newspaper {
+
+  div.articles {
+    @include row(6);
+  }
+
+  article#article-1 {
+    @include col($lg-proportion: 1/6, $order: 2);
+  }
+
+  article#article-2 {
+    @include col($lg-proportion: 1/6);
+  }
+
+  article#article-3 {
+    @include col($lg-proportion: 1/6, $order: 4);
+  }
+
+  article#article-4 {
+    @include col($lg-proportion: 1/6);
+  }
+
+  article#article-5 {
+    @include col($lg-proportion: 1/6, $order: 6);
+  }
+
+  article#article-6 {
+    @include col($lg-proportion: 1/6);
+  }
+}
