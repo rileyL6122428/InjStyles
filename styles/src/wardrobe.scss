@@ -2,7 +2,7 @@ $sm-breakpoint: 576px;
 $md-breakpoint: 768px;
 $lg-breakpoint: 992px;
 
-@mixin shelf() {
+@mixin row() {
   width: 100%;
 
   &:after {
@@ -12,8 +12,8 @@ $lg-breakpoint: 992px;
   }
 }
 
-@mixin custom-pair(
-  $xs-proportion: 1, 
+@mixin col(
+  $xs-proportion: 1,
   $sm-proportion: $xs-proportion,
   $md-proportion: $sm-proportion,
   $lg-proportion: $md-proportion) {
