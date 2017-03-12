@@ -1,8 +1,7 @@
 @import "../src/wardrobe.scss";
 
-$colors: red, green, blue, yellow, silver, gold;
-
 section#sample-newspaper {
+  $colors: red, green, blue, yellow, silver, gold;
 
   h1, article {
       text-align: center;

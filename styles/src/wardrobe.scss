@@ -14,23 +14,30 @@ $lg-breakpoint: 992px;
 
 @mixin col(
   $xs-proportion: 1,
+  $xs-offset: 0,
   $sm-proportion: $xs-proportion,
+  $sm-offset: $xs-offset,
   $md-proportion: $sm-proportion,
-  $lg-proportion: $md-proportion) {
+  $md-offset: $sm-offset,
+  $lg-proportion: $md-proportion,
+  $lg-offset: $md-offset) {
 
   float: left;
 
   width: $xs-proportion * 100%;
 
   @media(min-width: $sm-breakpoint) {
+    margin-left: $sm-offset * 100%;
     width: $sm-proportion * 100%;
   }
 
   @media(min-width: $md-breakpoint) {
+    margin-left: $md-offset * 100%;
     width: $md-proportion * 100%;
   }
 
   @media(min-width: $lg-breakpoint) {
+    margin-left: $lg-offset * 100%;
     width: $lg-proportion * 100%;
   }
 }

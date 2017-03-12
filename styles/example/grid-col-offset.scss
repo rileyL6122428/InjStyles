@@ -1,0 +1,86 @@
+@import "../src/wardrobe.scss";
+
+section#sample-newspaper {
+  $colors: red, green, blue, yellow, silver, gold;
+
+  h1, article {
+      text-align: center;
+  }
+
+  div.articles {
+      @include row();
+  }
+
+  article {
+    border-radius: 2px;
+  }
+
+  @for $idx from 1 through 6 {
+    article#article-#{$idx} {
+      background-color: nth($colors, $idx);
+    }
+  }
+
+  article#article-1 {
+    @include col(
+      $sm-proportion: 1/2,
+      $md-proportion: 1/4,
+      $md-offset: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 1/6
+    );
+  }
+
+  article#article-2 {
+    @include col(
+      $sm-proportion: 1/2,
+      $sm-offset: 1/2,
+      $md-proportion: 1/4,
+      $md-offset: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 1/6
+    );
+  }
+
+  article#article-3 {
+    @include col(
+      $sm-proportion: 1/2,
+      $md-proportion: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 1/6
+    );
+  }
+
+  article#article-4 {
+    @include col(
+      $sm-proportion: 1/2,
+      $sm-offset: 1/2,
+      $md-proportion: 1/4,
+      $md-offset: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 0
+    );
+  }
+
+  article#article-5 {
+    @include col(
+      $sm-proportion: 1/2,
+      $md-proportion: 1/4,
+      $md-offset: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 1/6
+    );
+  }
+
+  article#article-6 {
+    @include col(
+      $sm-proportion: 1/2,
+      $sm-offset: 1/2,
+      $md-proportion: 1/4,
+      $md-offset: 1/4,
+      $lg-proportion: 1/6,
+      $lg-offset: 1/6
+    );
+  }
+
+}
