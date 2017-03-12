@@ -1,26 +1,19 @@
 @import "../src/wardrobe.scss";
 
 section#sample-newspaper {
-  $colors: red, green, blue, yellow, silver, gold;
-
-  h1, article {
-      text-align: center;
-  }
 
   div.articles {
       @include row();
   }
 
-  article {
-    border-radius: 2px;
-  }
-
 
   @for $idx from 1 through 6 {
     article#article-#{$idx} {
-      background-color: nth($colors, $idx);
-
-      @include col($sm-proportion: 1/2, $md-proportion: 1/3, $lg-proportion: 1/6);
+      @include col(
+        $sm-proportion: 1/2,
+        $md-proportion: 1/3,
+        $lg-proportion: 1/6
+      );
     }
   }
 

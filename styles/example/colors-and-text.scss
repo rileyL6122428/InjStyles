@@ -1,0 +1,17 @@
+@import "../src/wardrobe.scss";
+
+section#sample-newspaper {
+  $colors: red, green, blue, yellow, silver, gold;
+
+  h1, article {
+      text-align: center;
+  }
+
+
+  @for $idx from 1 through 6 {
+    article#article-#{$idx} {
+      background-color: nth($colors, $idx);
+    }
+  }
+
+}
